@@ -1,22 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>HTML</title>
-  
-  <!-- HTML -->
-  
-
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChipFix - Chip Repair Experts</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <p>Nothing to see here...</p>
-  <!-- Project -->
-  <script src="main.js"></script>
+    <header>
+        <div class="container">
+            <h1>ChipFix</h1>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>We Bring Your Electronics Back to Life</h2>
+            <p>Specialized in microchip and board-level repairs</p>
+            <a href="#contact" class="btn">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <ul class="service-list">
+                <li>📱 Phone Chip Repair</li>
+                <li>💻 Laptop Logic Board Repair</li>
+                <li>🔧 Micro Soldering</li>
+                <li>🔍 Diagnostics and Testing</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="about" class="section light-bg">
+        <div class="container">
+            <h2>About ChipFix</h2>
+            <p>At ChipFix, we’re passionate about electronics. With over 10 years of experience in circuit repair, our certified technicians use precision tools and quality parts to ensure your devices work like new.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea placeholder="Describe your issue..." required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ChipFix. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
