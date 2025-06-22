@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.classList.toggle('show');
     });
   }
+  document.querySelectorAll('#navLinks a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('show');
+  });
+});
+
 });
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {

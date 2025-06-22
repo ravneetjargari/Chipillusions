@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -6,7 +13,7 @@ body {
 }
 
 /* Navigation Styles */
-.navbar {
+  .navbar {
   position: absolute;
   top: 0;
   left: 0;
@@ -15,20 +22,46 @@ body {
   color: white;
   z-index: 2;
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
+  flex-direction: column; /* Stack logo on top, links below */
+  align-items: center;
+  padding: 20px 10px;
+  box-sizing: border-box;
 }
 
-.navbar .logo {
+.logo {
+  font-family: 'Pacifico';
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 2em;
+  letter-spacing: 5px;
+  font-weight: bold;
+  color: white;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.logo-img {
+  height: 200px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.navbar {
   font-size: 1.5em;
   font-weight: bold;
 }
 
-.navbar .nav-links {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
 
 .navbar .nav-links li a {
   color: white;
@@ -57,33 +90,47 @@ body {
   cursor: pointer;
 }
 
-/* Responsive Nav */
-@media screen and (max-width: 768px) {
-  .nav-links li a {
-    background: #0078D7;
-    color: white;
-    padding: 10px 16px;
-    margin: 6px 0;
-  }
-  
-  .nav-links li a:hover {
-    background: #005bb5;
-  }
+.top-bar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box; /* ⬅ ensures padding doesn't overflow width */
+  background-color: #0078D7;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 18px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow-x: hidden; /* ⬅ just in case */
+}
 
-  
-  .nav-links.show {
-    display: flex;
-  }
-  
-  .menu-toggle {
-    display: block;
-  }
+
+.top-bar .icon {
+  margin-right: 6px;
+}
+
+.top-left,
+.top-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 👈 aligns toggle and logo to the left */
+  width: 100%;
+  gap: 10px;
 }
 
 /* Hero Section */
 .hero {
   position: relative;
-  height: 100vh; /* Full viewport height */
+  height: 90vh;
   background: url('hero-windshield.png') no-repeat center center/cover;
   display: flex;
   align-items: center;
@@ -91,6 +138,7 @@ body {
   text-align: center;
   color: white;
   z-index: 1;
+  padding: 0 20px;
 }
 
 .hero-overlay {
@@ -100,13 +148,16 @@ body {
 }
 
 .hero-content {
-  position: relative;
-  text-align: center;
-  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 2;
 }
 .hero-btn {
+  margin-top: 5px;
   padding: 12px 28px;
-  font-size: 1rem;
+  font-size: 2rem;
   background: linear-gradient(135deg, #0078D7, #00BFFF);
   color: white;
   text-decoration: none;
@@ -125,13 +176,14 @@ body {
 }
 
 .hero-content h1 {
+  margin-top: 10px;
   font-size: 3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
 }
 
 /* Section styles */
@@ -240,4 +292,75 @@ footer.contact {
   width: 100%;
   height: 100%;
   border: 0;
+}
+/* Responsive Nav */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #0078D7;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    border-radius: 20px;
+  }
+
+  .navbar-top {
+    padding: 10px 20px;
+  }
+
+  .menu-toggle {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    display: block;
+  }
+
+  
+  .nav-links.show {
+    display: flex;
+  }
+  
+
+   .top-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .top-left,
+  .top-right {
+    margin: 4px 0;
+  }
+  
+
+  .hero{
+    height: auto;
+    padding: 60px 0;
+  }
+  .logo{
+    margin-top: 50px;
+    font-size: 29px;
+  }
+  .logo-img{
+    height: 150px;
+    width: auto;
+  }
+  .hero-content h1{
+    font-size: 2rem;       /* smaller headline */
+    line-height: 1.2;
+    margin-top: 75px;
+  }
+  .hero-content p {
+    font-size: 1rem;       /* smaller paragraph */
+    line-height: 1.5;
+    max-width: 90%;        /* reduce width on small screens */
+  }
+
+  .hero-btn {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+  
 }
