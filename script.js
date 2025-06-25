@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   document.querySelectorAll('#navLinks a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('show');
-    });
+  link.addEventListener('click', () => {
+    nav.classList.remove('show');
   });
-  
+});
+
 });
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
